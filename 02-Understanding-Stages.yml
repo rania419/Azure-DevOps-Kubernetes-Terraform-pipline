@@ -30,7 +30,7 @@ stages:
           **/*.yaml
           **/*.tf
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
-    - bash : ls _R $(Build.ArtifactStagingDirectory)
+    - bash : ls -R $(Build.ArtifactStagingDirectory)
 
 #  - job: SecondtJob
 #    steps:
