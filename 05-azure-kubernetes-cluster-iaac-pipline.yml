@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - main
 
@@ -25,9 +20,9 @@ steps:
     backendType: 'azurerm'
     backendServiceArm: 'azure-ressource-manager-service-connection'
     ensureBackend: true
-    backendAzureRmResourceGroupName: 'terraform-backen-resource-name'
+    backendAzureRmResourceGroupName: 'terraform-backen-rg'
     backendAzureRmResourceGroupLocation: 'westeurope'
     backendAzureRmStorageAccountName: 'storageacctrania'
     backendAzureRmContainerName: 'storageacctraniacontainer'
-    backendAzureRmKey: 'K8S_Dev.tfstate'
+    backendAzureRmKey: 'Kubernetes_dev.tfstate'
     allowTelemetryCollection: true
