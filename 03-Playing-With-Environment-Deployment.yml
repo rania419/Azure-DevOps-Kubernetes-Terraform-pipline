@@ -1,0 +1,18 @@
+#Running Azure DevOps Jobs on Multiple Agents
+
+trigger:
+- master
+strategy:
+ matrix:
+    linux:
+      OperatingSystem: 'ubuntu-latest'
+    mac:
+      OperatingSystem: 'macos-latest'
+
+pool:
+  vmImage: $(OperatingSystem)
+
+steps:
+- script: echo Running On  $(OperatingSystem) System !
+  displayName: 'Run a one-line script'
+'
