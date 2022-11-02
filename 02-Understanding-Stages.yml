@@ -18,6 +18,20 @@ stages:
     - bash : echo $(System.DefaultWorkingDirectory)
     - bash : ls -R $(System.DefaultWorkingDirectory)
     - bash : echo $(Build.ArtifactStagingDirectory)
+    - bash : java -version
+    - bash : python --version
+    - bash : java --version
+    - bash : mvn -version
+    - bash : ls _R $(Build.ArtifactStagingDirectory)
+    - task: CopyFiles@2 #make a copy from default to artifact directory
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
+        Contents: |
+          **/*.yaml
+          **/*.tf
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    - bash : ls _R $(Build.ArtifactStagingDirectory)
+
 #  - job: SecondtJob
 #    steps:
 #    - bash: echo Build, SecondtJob !
