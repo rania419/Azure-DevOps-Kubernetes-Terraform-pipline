@@ -20,9 +20,9 @@ steps:
     backendType: 'azurerm'
     backendServiceArm: 'azure-ressource-manager-service-connection'
     ensureBackend: true
-    backendAzureRmResourceGroupName: 'terraform-backen-rg'
+    backendAzureRmResourceGroupName: 'terraform-backend-rg'
     backendAzureRmResourceGroupLocation: 'westeurope'
     backendAzureRmStorageAccountName: 'storageacctrania'
     backendAzureRmContainerName: 'storageacctraniacontainer'
-    backendAzureRmKey: 'Kubernetes_dev.tfstate'
+    backendAzureRmKey: 'Kubernetes-dev.tfstat'
     allowTelemetryCollection: true
