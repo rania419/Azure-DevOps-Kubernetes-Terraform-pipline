@@ -10,21 +10,26 @@ stages:
   - job: FirstJob
     steps:
     - bash: echo Build, FirstJob !
+    - bash : echo $(PiplineLevelVariable)
   - job: SecondtJob
     steps:
     - bash: echo Build, SecondtJob !
 - stage: DevDeploy
+  variables:
+    environment: DevDeploy
   dependsOn: Build
   jobs:
   - job: DevJob
     steps:
-    - bash: echo DevDeploy, DevJob !
+    - bash: echo $(environment), DevJob !
 - stage: QADeploy
+  variables:
+    environment: QADeploy
   dependsOn: Build
   jobs:
   - job: QAtJob
     steps:
-    - bash: echo QADeploy, QAtJob !
+    - bash: echo $(environment), QAJob !
 - stage: ProdDeploy
   dependsOn:
   - DevDeploy   
