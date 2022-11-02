@@ -10,19 +10,19 @@ stages:
   - job: FirstJob
     steps:
     - bash: echo Build, FirstJob !
-    - bash : echo $(PiplineLevelVariable)
-    - bash : echo $(Build.BuildNumber)
-    - bash : echo $(Build.BuildId)
-    - bash : echo $(Build.SourceBranchName)
-    - bash : echo $(Build.SourcesDirectory)
-    - bash : echo $(System.DefaultWorkingDirectory)
-    - bash : ls -R $(System.DefaultWorkingDirectory)
-    - bash : echo $(Build.ArtifactStagingDirectory)
-    - bash : java -version
-    - bash : python --version
-    - bash : java --version
-    - bash : mvn -version
-    - bash : ls _R $(Build.ArtifactStagingDirectory)
+    - bash: echo $(PiplineLevelVariable)
+    - bash: echo $(Build.BuildNumber)
+    - bash: echo $(Build.BuildId)
+    - bash: echo $(Build.SourceBranchName)
+    - bash: echo $(Build.SourcesDirectory)
+    - bash: echo $(System.DefaultWorkingDirectory)
+    - bash: ls -R $(System.DefaultWorkingDirectory)
+    - bash: echo $(Build.ArtifactStagingDirectory)
+    - bash: java -version
+    - bash: python --version
+    - bash: java --version
+    - bash: mvn -version
+    - bash: ls _R $(Build.ArtifactStagingDirectory)
     - task: CopyFiles@2 #make a copy from default to artifact directory
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
