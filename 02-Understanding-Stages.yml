@@ -22,7 +22,7 @@ stages:
     - bash: python --version
     - bash: java --version
     - bash: mvn -version
-    - bash: ls _R $(Build.ArtifactStagingDirectory)
+    - bash: ls -R $(Build.ArtifactStagingDirectory)
     - task: CopyFiles@2 #make a copy from default to artifact directory
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
