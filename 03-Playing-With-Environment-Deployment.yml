@@ -1,7 +1,8 @@
 #Running Azure DevOps Jobs on Multiple Agents
 
 trigger:
-- master
+- main
+
 strategy:
  matrix:
     linux:
