@@ -19,6 +19,7 @@ steps:
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
     backendServiceArm: 'azure-ressource-manager-service-connection'
+    backendAzureRmSubscriptionId: '4e8e9a40-72b1-4310-88a9-b2b0d84fb659'
     ensureBackend: true
     backendAzureRmResourceGroupName: 'new-cloud-shell-storage-westeurope'
     backendAzureRmResourceGroupLocation: 'westeurope'
@@ -26,7 +27,7 @@ steps:
     backendAzureRmStorageAccountSku: 'storageaccountrania'
     backendAzureRmContainerName: 'ranialounasstoragecontainer'
     backendAzureRmKey: 'backend.tfstate'
-    allowTelemetryCollection: true
+    allowTelemetryCollection: false
     
 - task: TerraformCLI@0
   inputs:
