@@ -22,7 +22,8 @@ steps:
     ensureBackend: true
     backendAzureRmResourceGroupName: 'new-cloud-shell-storage-westeurope'
     backendAzureRmResourceGroupLocation: 'westeurope'
-    backendAzureRmStorageAccountName: 'csb1003200244281815rania'
+    backendAzureRmStorageAccountName: 'csb1003200244281815Rania'
+    backendAzureRmStorageAccountSku: 'storageaccountrania'
     backendAzureRmContainerName: 'ranialounasstoragecontainer'
     backendAzureRmKey: 'backend.tfstate'
     allowTelemetryCollection: true
