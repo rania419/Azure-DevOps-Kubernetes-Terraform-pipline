@@ -27,7 +27,7 @@ steps:
     backendAzureRmStorageAccountSku: 'storageaccountrania'
     backendAzureRmContainerName: 'ranialounasstoragecontainer'
     backendAzureRmKey: 'backend.tfstate'
-    allowTelemetryCollection: false
+
     
 - task: TerraformCLI@0
   inputs:
