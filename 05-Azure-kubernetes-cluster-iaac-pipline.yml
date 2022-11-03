@@ -15,11 +15,12 @@ steps:
   inputs:
     command: 'init'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    #commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
-    backendServiceArm: 'Azure for Students(4e8e9a40-72b1-4310-88a9-b2b0d84fb659)'
+    backendServiceArm: 'azure-ressource-manager-service-connection'
     backendAzureRmSubscriptionId: '4e8e9a40-72b1-4310-88a9-b2b0d84fb659'
-    backendAzureRmResourceGroupName: 'cloud-shell-storage-westeurope'
+    ensureBackend: true
+    backendAzureRmResourceGroupName: 'new-cloud-shell-storage-westeurope'
+    backendAzureRmResourceGroupLocation: 'westeurope'
     backendAzureRmStorageAccountName: 'csb1003200244281815'
     backendAzureRmContainerName: 'ranialounasstoragecontainer'
     backendAzureRmKey: '5zyiG7Svz1P2KdgnKDmTiE5ws6pqe58SUzkTFVshnQgxuZzU8oR+KOaus5zLCzlUK0haXTu6+kfY+AStIF6MLg=='
@@ -29,9 +30,6 @@ steps:
   inputs:
     command: 'apply'
     workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes'
-    environmentServiceName: 'Azure for Students(4e8e9a40-72b1-4310-88a9-b2b0d84fb659)'
-    providerAzureRmSubscriptionId: '4e8e9a40-72b1-4310-88a9-b2b0d84fb659'
-    runAzLogin: true
+    environmentServiceName: 'azure-ressource-manager-service-connection'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
-    allowTelemetryCollection: true
     
