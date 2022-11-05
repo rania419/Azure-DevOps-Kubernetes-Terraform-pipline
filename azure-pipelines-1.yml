@@ -12,6 +12,7 @@ steps:
   name: publickey
   inputs:
     secureFile: 'public_key.pub'
+
 - task: TerraformCLI@0
   inputs:
     command: 'init'
@@ -22,8 +23,9 @@ steps:
     backendAzureRmResourceGroupName: 'cloud-shell-storage-westeurope'
     backendAzureRmStorageAccountName: 'csb1003200244281815'
     backendAzureRmContainerName: 'ranialounasstoragecontainer'
-    backendAzureRmKey: 'csb1003200244281815'
+    backendAzureRmKey: 'terraform.tfstate'
     allowTelemetryCollection: false
+
 
 
 - task: TerraformCLI@0
