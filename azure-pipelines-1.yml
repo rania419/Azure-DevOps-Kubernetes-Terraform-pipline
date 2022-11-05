@@ -1,0 +1,36 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: DownloadSecureFile@1
+  name: publickey
+  inputs:
+    secureFile: 'public_key.pub'
+- task: TerraformCLI@0
+  inputs:
+    command: 'init'
+    commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
+    backendType: 'azurerm'
+    backendServiceArm: 'azure-ressource-manager-service-connection'
+    backendAzureRmSubscriptionId: '4e8e9a40-72b1-4310-88a9-b2b0d84fb659'
+    backendAzureRmResourceGroupName: 'cloud-shell-storage-westeurope'
+    backendAzureRmStorageAccountName: 'csb1003200244281815'
+    backendAzureRmContainerName: 'ranialounasstoragecontainer'
+    backendAzureRmKey: '5zyiG7Svz1P2KdgnKDmTiE5ws6pqe58SUzkTFVshnQgxuZzU8oR+KOaus5zLCzlUK0haXTu6+kfY+AStIF6MLg=='
+    allowTelemetryCollection: false
+
+
+- task: TerraformCLI@0
+  inputs:
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes/'
+    environmentServiceName: 'Azure for Students(4e8e9a40-72b1-4310-88a9-b2b0d84fb659)'
+    providerAzureRmSubscriptionId: '4e8e9a40-72b1-4310-88a9-b2b0d84fb659'
+    runAzLogin: true
+    allowTelemetryCollection: false
