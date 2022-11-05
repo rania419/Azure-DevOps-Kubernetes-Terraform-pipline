@@ -19,10 +19,12 @@ steps:
     backendType: 'azurerm'
     backendServiceArm: 'azure-ressource-manager-service-connection'
     backendAzureRmSubscriptionId: '4e8e9a40-72b1-4310-88a9-b2b0d84fb659'
+    ensureBackend: true
     backendAzureRmResourceGroupName: 'cloud-shell-storage-westeurope'
-    backendAzureRmStorageAccountName: 'csb1003200244281815'
+    backendAzureRmResourceGroupLocation: 'westeurope'
+    backendAzureRmStorageAccountName: 'StorageRaniaAccount'
     backendAzureRmContainerName: 'ranialounasstoragecontainer'
-    backendAzureRmKey: '5zyiG7Svz1P2KdgnKDmTiE5ws6pqe58SUzkTFVshnQgxuZzU8oR+KOaus5zLCzlUK0haXTu6+kfY+AStIF6MLg=='
+    backendAzureRmKey: 'RaniaKey'
     allowTelemetryCollection: false
 
 
