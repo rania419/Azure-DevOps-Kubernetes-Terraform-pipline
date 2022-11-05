@@ -17,14 +17,12 @@ steps:
     command: 'init'
     commandOptions: '-var client_id=$(client_id) -var client_secret=$(client_secret) -var ssh_public_key=$(publickey.secureFilePath)'
     backendType: 'azurerm'
-    backendServiceArm: 'azure-ressource-manager-service-connection'
+    backendServiceArm: 'Azure for Students(4e8e9a40-72b1-4310-88a9-b2b0d84fb659)'
     backendAzureRmSubscriptionId: '4e8e9a40-72b1-4310-88a9-b2b0d84fb659'
-    ensureBackend: true
     backendAzureRmResourceGroupName: 'cloud-shell-storage-westeurope'
-    backendAzureRmResourceGroupLocation: 'westeurope'
-    backendAzureRmStorageAccountName: 'StorageRaniaAccount'
+    backendAzureRmStorageAccountName: 'csb1003200244281815'
     backendAzureRmContainerName: 'ranialounasstoragecontainer'
-    backendAzureRmKey: 'RaniaKey'
+    backendAzureRmKey: 'csb1003200244281815'
     allowTelemetryCollection: false
 
 
