@@ -19,11 +19,8 @@ steps:
     backendType: 'azurerm'
     backendServiceArm: 'Azure for Students(2)(4e8e9a40-72b1-4310-88a9-b2b0d84fb659)'
     backendAzureRmSubscriptionId: '4e8e9a40-72b1-4310-88a9-b2b0d84fb659'
-    ensureBackend: true
     backendAzureRmResourceGroupName: 'Resource-groupe-rania'
-    backendAzureRmResourceGroupLocation: 'westeurope'
     backendAzureRmStorageAccountName: 'StorageAcountRania'
-    backendAzureRmStorageAccountSku: 'StorageAccountSKU'
     backendAzureRmContainerName: 'ranialounasstoragecontainer'
     backendAzureRmKey: 'terraform.tfstate'
     allowTelemetryCollection: false
